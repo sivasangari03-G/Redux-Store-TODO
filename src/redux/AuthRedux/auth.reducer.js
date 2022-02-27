@@ -1,5 +1,5 @@
 import { getValue, setValue } from "../../utils/localStorage";
-import { USER_LOGIN, USER_LOGIN_ERROR, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT } from "./auth.actionType";
+import {USER_LOGIN_ERROR, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT } from "./auth.actionType";
 
 let initState = {
 	auth: {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { authLoginAction, loginError, loginRequest, loginSuccess } from "../redux/AuthRedux/auth.action";
+import {loginError, loginRequest, loginSuccess } from "../redux/AuthRedux/auth.action";
 import axios from "axios";
 export const Login = () => {
 	const [email, setEmail] = useState("eve.holt@reqres.in");
