@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {loginError, loginRequest, loginSuccess } from "../redux/AuthRedux/auth.action";
-import axios from "axios";
+import { login } from "../redux/AuthRedux/auth.api";
 export const Login = () => {
 	const [email, setEmail] = useState("eve.holt@reqres.in");
 	const [password, setPassword] = useState("cityslicka");
@@ -11,20 +10,7 @@ export const Login = () => {
 	const dispatch = useDispatch();
 	const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginRequest())
-		axios.post("https://reqres.in/api/login", {
-				email,
-				password,
-			})
-			.then((json) => {
-				// console.log(json.data);
-				// dispatch(authLoginAction(json.data));
-        dispatch(loginSuccess(json.data))
-      }).catch((err) => {
-        dispatch(loginError(err));
-
-        console.log(err);
-      })
+    dispatch(login({ email, password }));
   };
   
   if (isLoading) return <h1>Loading...</h1>
